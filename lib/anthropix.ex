@@ -134,15 +134,16 @@ defmodule Anthropix do
 
   schema :chat_message_content, [
     type: [
-      type: {:in, ["text", "image", "tool_use", "tool_result", "document"]},
+      type: {:in, ["text", "image", "tool_use", "tool_result", "document", "tool_id"]},
       required: true,
     ],
     # text type
     text: [type: :string],
     # image type
     source: [type: :map],
-    # tool_use
+    # tool_use and tool_result
     id: [type: :string],
+    tool_id: [type: :string],
     name: [type: :string],
     input: [type: :map],
     # tool_result
